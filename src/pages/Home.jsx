@@ -4,7 +4,7 @@ import InfoLabel from "../components/InfoLabel";
 
 const Home = () => {
   return (
-    <section className="h-screen w-full flex justify-between items-center gap-3xl">
+    <section className="flex flex-1 w-full justify-between items-center gap-3xl">
       <div className="w-1/2 flex flex-col gap-xl">
         <h1 className="text-hero font-bold">
           Discover Your

@@ -5,7 +5,7 @@ const Button = ({ label, link }) => {
   return (
     <Link
       to={link}
-      className="w-fit px-lg py-md bg-primary hover:bg-gold-hover rounded-xs"
+      className="w-fit px-md py-sm bg-primary hover:bg-gold-hover rounded-xs"
     >
       {label}
     </Link>

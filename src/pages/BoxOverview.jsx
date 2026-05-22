@@ -1,7 +1,108 @@
 import React from "react";
+import Card from "../components/Card";
+import Button from "../components/Button";
+import GridItem from "../components/GridItem";
 
 const BoxOverview = () => {
-  return <div>BoxOverview</div>;
+  const [currentPraline, setCurrentPraline] = React.useState(null);
+
+  return (
+    <section className="grid flex-1 grid-cols-5 items-stretch gap-xl py-2xl">
+      <div className="col-span-3 flex h-full flex-col gap-xl">
+        <Card className="flex flex-1 flex-col gap-sm px-lg white-gradient">
+          <div className="grid grid-cols-4 justify-center items-center gap-sm">
+            <GridItem
+              imageUrl="/images/chocolate1.jpg"
+              imageAlt="Chocolate 1"
+            />
+            <GridItem
+              imageUrl="/images/chocolate1.jpg"
+              imageAlt="Chocolate 1"
+            />
+            <GridItem
+              imageUrl="/images/chocolate1.jpg"
+              imageAlt="Chocolate 1"
+            />
+            <GridItem
+              imageUrl="/images/chocolate1.jpg"
+              imageAlt="Chocolate 1"
+            />
+            <GridItem
+              imageUrl="/images/chocolate1.jpg"
+              imageAlt="Chocolate 1"
+            />
+            <GridItem
+              imageUrl="/images/chocolate1.jpg"
+              imageAlt="Chocolate 1"
+            />
+            <GridItem
+              imageUrl="/images/chocolate1.jpg"
+              imageAlt="Chocolate 1"
+            />
+            <GridItem
+              imageUrl="/images/chocolate1.jpg"
+              imageAlt="Chocolate 1"
+            />
+            <GridItem
+              imageUrl="/images/chocolate1.jpg"
+              imageAlt="Chocolate 1"
+            />
+            <GridItem
+              imageUrl="/images/chocolate1.jpg"
+              imageAlt="Chocolate 1"
+            />
+            <GridItem
+              imageUrl="/images/chocolate1.jpg"
+              imageAlt="Chocolate 1"
+            />
+            <GridItem
+              imageUrl="/images/chocolate1.jpg"
+              imageAlt="Chocolate 1"
+            />
+            <GridItem
+              imageUrl="/images/chocolate1.jpg"
+              imageAlt="Chocolate 1"
+            />
+            <GridItem
+              imageUrl="/images/chocolate1.jpg"
+              imageAlt="Chocolate 1"
+            />
+            <GridItem
+              imageUrl="/images/chocolate1.jpg"
+              imageAlt="Chocolate 1"
+            />
+            <GridItem
+              imageUrl="/images/chocolate1.jpg"
+              imageAlt="Chocolate 1"
+            />
+          </div>
+        </Card>
+
+        <Card className="flex flex-1 flex-col gap-sm px-lg"></Card>
+      </div>
+
+      <div className="col-span-2 flex h-full flex-col gap-xl">
+        <Card className="flex flex-1 flex-col gap-sm px-lg">
+          <div className="flex gap-lg">
+            <img src="/fallback.webp" alt="praline" />
+            <div className="flex flex-col gap-xs">
+              <p className="label-text">praline detail</p>
+              <p className="text-lg font-bold">Praline Naam</p>
+            </div>
+          </div>
+        </Card>
+
+        <Card className="flex flex-1 flex-col gap-sm px-lg">
+          <p className="label-text">Gift note</p>
+          <p>Add a personal message or special request here.</p>
+        </Card>
+
+        <Card className="flex items-end px-lg">
+          <Button label="Proceed to checkout" link="/checkout" />
+        </Card>
+      </div>
+    </section>
+  );
 };
 
 export default BoxOverview;

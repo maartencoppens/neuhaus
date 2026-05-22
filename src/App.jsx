@@ -8,16 +8,18 @@ import Container from "./components/Container";
 
 function App() {
   return (
-    <div className="min-h-screen bg-background-primary text-[#2b160e]">
+    <div className="min-h-screen flex flex-col bg-background-primary text-[#2b160e]">
       <Navbar />
-      <Container>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/chat" element={<Chat />} />
-          <Route path="/box" element={<BoxOverview />} />
-          <Route path="/checkout" element={<Checkout />} />
-        </Routes>
-      </Container>
+      <main className="flex-1 flex">
+        <Container className="flex flex-1 flex-col">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/chat" element={<Chat />} />
+            <Route path="/box" element={<BoxOverview />} />
+            <Route path="/checkout" element={<Checkout />} />
+          </Routes>
+        </Container>
+      </main>
     </div>
   );
 }

@@ -1,0 +1,1581 @@
+{
+  "meta": {
+    "brand": "Neuhaus",
+    "country": "Belgium",
+    "founded": 1857,
+    "pralineInvented": 1912,
+    "source": "Reconstructed from public Neuhaus product pages and official brand materials",
+    "lastUpdated": "2026-05-22",
+    "totalPralines": 38,
+    "configuratorFilters": [
+      "chocolateType",
+      "filling",
+      "name"
+    ]
+  },
+  "flavorCategories": [
+    {
+      "id": "cat-001",
+      "name": "Irrésistibles",
+      "slug": "irresistibles",
+      "description": "Iconic pralines with a handmade caramel-coloured nougatine shell, a Neuhaus signature since Expo 58.",
+      "icon": "diamond"
+    },
+    {
+      "id": "cat-002",
+      "name": "Manon",
+      "slug": "manon",
+      "description": "Named after Suzanne, daughter of Jean Neuhaus. Sugar cream or chocolate coated with a smooth cream or mousse filling.",
+      "icon": "star"
+    },
+    {
+      "id": "cat-003",
+      "name": "Gianduja & Cornet",
+      "slug": "gianduja-cornet",
+      "description": "Iconic cornet-shaped pralines with a melt-in-the-mouth hazelnut gianduja filling.",
+      "icon": "cone"
+    },
+    {
+      "id": "cat-004",
+      "name": "Praliné",
+      "slug": "praline-filled",
+      "description": "A delicate mixture of hazelnuts and/or almonds, chocolate and sugar in precise proportions.",
+      "icon": "nut"
+    },
+    {
+      "id": "cat-005",
+      "name": "Ganache",
+      "slug": "ganache",
+      "description": "Smooth, intense ganache fillings made with origin chocolates from around the world.",
+      "icon": "drop"
+    },
+    {
+      "id": "cat-006",
+      "name": "Caramel",
+      "slug": "caramel",
+      "description": "Filled with authentic caramel made in traditional copper pots in the Belgian atelier.",
+      "icon": "caramel"
+    },
+    {
+      "id": "cat-007",
+      "name": "Heritage",
+      "slug": "heritage",
+      "description": "Pralines named after members of the Neuhaus family, each celebrating a chapter of the brand's history.",
+      "icon": "heritage"
+    },
+    {
+      "id": "cat-008",
+      "name": "Dark Origin",
+      "slug": "dark-origin",
+      "description": "Intense dark chocolates made with single-origin cacao, showcasing distinct terroir.",
+      "icon": "bean"
+    },
+    {
+      "id": "cat-009",
+      "name": "Bonbon",
+      "slug": "bonbon",
+      "description": "Small sweet confections coated with chocolate, including fruit and specialty fillings.",
+      "icon": "circle"
+    },
+    {
+      "id": "cat-010",
+      "name": "Marzipan",
+      "slug": "marzipan",
+      "description": "Made with 50% almonds from Faro, Portugal, in the purest marzipan tradition.",
+      "icon": "almond"
+    }
+  ],
+  "chocolateTypes": [
+    {
+      "id": "dark",
+      "label": "Dark",
+      "colorHex": "#3B1A08"
+    },
+    {
+      "id": "milk",
+      "label": "Milk",
+      "colorHex": "#C8813A"
+    },
+    {
+      "id": "white",
+      "label": "White",
+      "colorHex": "#F5E6C8"
+    }
+  ],
+  "boxOptions": [
+    {
+      "id": "box-medium",
+      "name": "Medium Box",
+      "slug": "medium",
+      "capacity": 16,
+      "weightGrams": null,
+      "price": null,
+      "currency": "EUR",
+      "description": "A classic Neuhaus ballotin for 16 hand-picked pralines.",
+      "image": "https://www.neuhauschocolates.com/dw/image/v2/BFRH_PRD/on/demandware.static/-/Library-Sites-NeuhausSharedLibrary/default/box-medium.jpg",
+      "available": true
+    },
+    {
+      "id": "box-large",
+      "name": "Large Box",
+      "slug": "large",
+      "capacity": 36,
+      "weightGrams": null,
+      "price": null,
+      "currency": "EUR",
+      "description": "A generous Neuhaus ballotin for 36 hand-picked pralines, perfect as a gift.",
+      "image": "https://www.neuhauschocolates.com/dw/image/v2/BFRH_PRD/on/demandware.static/-/Library-Sites-NeuhausSharedLibrary/default/box-large.jpg",
+      "available": true
+    }
+  ],
+  "pralines": [
+    {
+      "id": "prl-001",
+      "name": "Caprice",
+      "description": "One of the two original Irrésistibles created for Expo 58. A handmade artisan nougatine shell filled with smooth vanilla fresh cream, enrobed in fine dark chocolate.",
+      "category": "cat-001",
+      "chocolateType": "dark",
+      "flavorProfile": [
+        "vanilla",
+        "caramel",
+        "crunchy",
+        "nougatine"
+      ],
+      "filling": "Vanilla fresh cream",
+      "ingredients": [
+        "dark chocolate",
+        "nougatine",
+        "cream",
+        "vanilla",
+        "sugar",
+        "hazelnuts"
+      ],
+      "image": "https://www.neuhauschocolates.com/dw/image/v2/BFRH_PRD/on/demandware.static/-/Sites-neuhaus-catalog-master/default/dw4d791aa9/Pralines/Pralines%20transparent/4421209_Caprice_1000x1000px.png.png?sw=100",
+      "price": null,
+      "tags": [
+        "iconic",
+        "irresistibles",
+        "expo58",
+        "nougatine",
+        "bestseller"
+      ],
+      "pairings": [
+        "champagne",
+        "sparkling-wine",
+        "green-tea"
+      ],
+      "available": true
+    },
+    {
+      "id": "prl-002",
+      "name": "Tentation",
+      "description": "Twin icon to the Caprice, born at Expo 58. A handmade caramel-coloured nougatine shell filled with smooth coffee ganache, enrobed in fine milk chocolate.",
+      "category": "cat-001",
+      "chocolateType": "milk",
+      "flavorProfile": [
+        "coffee",
+        "caramel",
+        "crunchy",
+        "nougatine"
+      ],
+      "filling": "Coffee ganache",
+      "ingredients": [
+        "milk chocolate",
+        "nougatine",
+        "cream",
+        "coffee",
+        "sugar",
+        "hazelnuts"
+      ],
+      "image": "https://www.neuhauschocolates.com/dw/image/v2/BFRH_PRD/on/demandware.static/-/Sites-neuhaus-catalog-master/default/dwc7da1947/Pralines/Pralines%20transparent/5021208%20Tentation%20Closed%20-%20GB%20-%201000x1000px.png?sw=100",
+      "price": null,
+      "tags": [
+        "iconic",
+        "irresistibles",
+        "expo58",
+        "nougatine",
+        "bestseller"
+      ],
+      "pairings": [
+        "espresso",
+        "cognac",
+        "dark-rum"
+      ],
+      "available": true
+    },
+    {
+      "id": "prl-003",
+      "name": "Manon Lait",
+      "description": "The classic Manon in milk chocolate. A sugar cream shell coated in smooth milk chocolate with a delicate cream filling. Named after the opera singer Suzanne Neuhaus.",
+      "category": "cat-002",
+      "chocolateType": "milk",
+      "flavorProfile": [
+        "sweet",
+        "creamy",
+        "delicate",
+        "milky"
+      ],
+      "filling": "Sugar cream",
+      "ingredients": [
+        "milk chocolate",
+        "cream",
+        "sugar",
+        "butter"
+      ],
+      "image": "https://www.neuhauschocolates.com/dw/image/v2/BFRH_PRD/on/demandware.static/-/Sites-neuhaus-catalog-master/default/dw227f5282/Pralines/Pralines%20transparent/5021135%20Manon%20Lait%20Closed%20-%20GB%20-%201000x1000px.png?sw=100",
+      "price": null,
+      "tags": [
+        "manon",
+        "classic",
+        "sugar-cream"
+      ],
+      "pairings": [
+        "earl-grey-tea",
+        "prosecco",
+        "light-white-wine"
+      ],
+      "available": true
+    },
+    {
+      "id": "prl-004",
+      "name": "Manon Noir",
+      "description": "The dark chocolate variation of the iconic Manon. A sugar cream shell coated in intense dark chocolate, delivering a perfect balance of bitter and sweet.",
+      "category": "cat-002",
+      "chocolateType": "dark",
+      "flavorProfile": [
+        "bitter",
+        "creamy",
+        "intense",
+        "sweet"
+      ],
+      "filling": "Sugar cream",
+      "ingredients": [
+        "dark chocolate",
+        "cream",
+        "sugar",
+        "butter"
+      ],
+      "image": "https://www.neuhauschocolates.com/dw/image/v2/BFRH_PRD/on/demandware.static/-/Sites-neuhaus-catalog-master/default/dw87975d83/Pralines/Pralines%20transparent/5021134%20Manon%20Noir%20Closed%20-%20GB%20-%201000x1000px.png?sw=100",
+      "price": null,
+      "tags": [
+        "manon",
+        "dark",
+        "sugar-cream"
+      ],
+      "pairings": [
+        "red-wine",
+        "port",
+        "black-coffee"
+      ],
+      "available": true
+    },
+    {
+      "id": "prl-005",
+      "name": "Manon Choco Café",
+      "description": "A creamy white chocolate Manon decorated with the signature 'N', filled with Arabica coffee cream. A classic in the Neuhaus assortment.",
+      "category": "cat-002",
+      "chocolateType": "white",
+      "flavorProfile": [
+        "coffee",
+        "creamy",
+        "sweet",
+        "aromatic"
+      ],
+      "filling": "Arabica coffee cream",
+      "ingredients": [
+        "white chocolate",
+        "cream",
+        "Arabica coffee",
+        "sugar",
+        "butter"
+      ],
+      "image": "https://www.neuhauschocolates.com/dw/image/v2/BFRH_PRD/on/demandware.static/-/Sites-neuhaus-catalog-master/default/dwa7f4ab6d/Pralines/Pralines%20transparent/5021138%20Manon%20Chococafe%20Closed%20-%20GB%20-%20300x300px.png?sw=100",
+      "price": null,
+      "tags": [
+        "manon",
+        "white",
+        "coffee",
+        "classic"
+      ],
+      "pairings": [
+        "espresso",
+        "cappuccino",
+        "irish-whiskey"
+      ],
+      "available": true
+    },
+    {
+      "id": "prl-006",
+      "name": "Manon Choco Vanille",
+      "description": "A white chocolate Manon filled with an airy vanilla mousse, light and indulgent with every bite.",
+      "category": "cat-002",
+      "chocolateType": "white",
+      "flavorProfile": [
+        "vanilla",
+        "creamy",
+        "airy",
+        "sweet"
+      ],
+      "filling": "Vanilla mousse",
+      "ingredients": [
+        "white chocolate",
+        "cream",
+        "vanilla",
+        "sugar",
+        "butter"
+      ],
+      "image": "https://www.neuhauschocolates.com/dw/image/v2/BFRH_PRD/on/demandware.static/-/Sites-neuhaus-catalog-master/default/dw392609e1/Pralines/Pralines%20transparent/5021136%20Manon%20Chocovanille%20Closed%20-%20GB%20-%201000x1000px.png?sw=100",
+      "price": null,
+      "tags": [
+        "manon",
+        "white",
+        "vanilla"
+      ],
+      "pairings": [
+        "prosecco",
+        "sweet-riesling",
+        "herbal-tea"
+      ],
+      "available": true
+    },
+    {
+      "id": "prl-007",
+      "name": "Cornet Doré",
+      "description": "The iconic Neuhaus cornet shape. Hazelnut gianduja with a melt-in-the-mouth texture, with extra pieces of hazelnut for a satisfying crunch.",
+      "category": "cat-003",
+      "chocolateType": "milk",
+      "flavorProfile": [
+        "hazelnut",
+        "creamy",
+        "smooth",
+        "gianduja"
+      ],
+      "filling": "Hazelnut gianduja",
+      "ingredients": [
+        "milk chocolate",
+        "hazelnuts",
+        "sugar",
+        "cocoa butter"
+      ],
+      "image": "https://www.neuhauschocolates.com/dw/image/v2/BFRH_PRD/on/demandware.static/-/Sites-neuhaus-catalog-master/default/dw8e0eb021/Pralines/Pralines%20transparent/5021130%20Cornet%20Dore%20Closed%20-%20GB%20-%201000x1000px.png?sw=100",
+      "price": null,
+      "tags": [
+        "cornet",
+        "gianduja",
+        "hazelnut",
+        "iconic-shape",
+        "bestseller"
+      ],
+      "pairings": [
+        "hazelnut-coffee",
+        "amaretto",
+        "milk-tea"
+      ],
+      "available": true
+    },
+    {
+      "id": "prl-008",
+      "name": "Cornet Fondant",
+      "description": "A dark cornet shell filled with rich, luxurious hazelnut gianduja. The dark chocolate exterior adds depth and intensity to the smooth gianduja filling.",
+      "category": "cat-003",
+      "chocolateType": "dark",
+      "flavorProfile": [
+        "hazelnut",
+        "intense",
+        "bitter",
+        "gianduja"
+      ],
+      "filling": "Hazelnut gianduja",
+      "ingredients": [
+        "dark chocolate",
+        "hazelnuts",
+        "sugar",
+        "cocoa butter"
+      ],
+      "image": "https://www.neuhauschocolates.com/dw/image/v2/BFRH_PRD/on/demandware.static/-/Sites-neuhaus-catalog-master/default/dwb69d6b4a/Pralines/Pralines%20transparent/4023733_Cornet-fondant_closed_1000px.png?sw=100",
+      "price": null,
+      "tags": [
+        "cornet",
+        "gianduja",
+        "hazelnut",
+        "dark",
+        "iconic-shape"
+      ],
+      "pairings": [
+        "espresso",
+        "red-wine",
+        "bourbon"
+      ],
+      "available": true
+    },
+    {
+      "id": "prl-009",
+      "name": "Cornet Crunchy Noisettes",
+      "description": "The beloved cornet shape loaded with hazelnut gianduja and crispy pieces of feuilletine and caramel for an irresistible crunch.",
+      "category": "cat-003",
+      "chocolateType": "milk",
+      "flavorProfile": [
+        "hazelnut",
+        "crunchy",
+        "caramel",
+        "gianduja"
+      ],
+      "filling": "Gianduja with feuilletine and caramel",
+      "ingredients": [
+        "milk chocolate",
+        "hazelnuts",
+        "feuilletine",
+        "caramel",
+        "sugar"
+      ],
+      "image": "https://www.neuhauschocolates.com/dw/image/v2/BFRH_PRD/on/demandware.static/-/Sites-neuhaus-catalog-webshop-eu/default/cornet-crunchy.jpg",
+      "price": null,
+      "tags": [
+        "cornet",
+        "gianduja",
+        "hazelnut",
+        "crunchy",
+        "feuilletine"
+      ],
+      "pairings": [
+        "milk-coffee",
+        "tawny-port",
+        "salted-caramel-latte"
+      ],
+      "available": true
+    },
+    {
+      "id": "prl-010",
+      "name": "Jean 72%",
+      "description": "Named after Jean Neuhaus Jr., inventor of the Belgian praline. A fine dark chocolate shell revealing an exquisite Peruvian origin dark chocolate ganache (72% cocoa). Intense and strong.",
+      "category": "cat-007",
+      "chocolateType": "dark",
+      "flavorProfile": [
+        "intense",
+        "bitter",
+        "fruity",
+        "origin"
+      ],
+      "filling": "Peruvian dark chocolate ganache (72%)",
+      "ingredients": [
+        "dark chocolate 72%",
+        "cocoa mass",
+        "cream",
+        "sugar"
+      ],
+      "image": "https://www.neuhauschocolates.com/dw/image/v2/BFRH_PRD/on/demandware.static/-/Sites-neuhaus-catalog-master/default/dwccf84b9b/Pralines/Pralines%20transparent/5022684%20Jean%20Closed%20-%20GB%20-%201000x1000px.png?sw=100",
+      "price": null,
+      "tags": [
+        "heritage",
+        "dark",
+        "origin",
+        "peru",
+        "single-origin"
+      ],
+      "pairings": [
+        "single-malt-whisky",
+        "aged-rum",
+        "espresso"
+      ],
+      "available": true
+    },
+    {
+      "id": "prl-011",
+      "name": "Louise",
+      "description": "Named after Louise Agostini, wife of Jean Neuhaus and inventor of the ballotin. Elegant and refined — a milk chocolate shell with a smooth, sweet ganache of Java origin chocolate.",
+      "category": "cat-007",
+      "chocolateType": "milk",
+      "flavorProfile": [
+        "smooth",
+        "sweet",
+        "creamy",
+        "origin"
+      ],
+      "filling": "Java origin milk chocolate ganache",
+      "ingredients": [
+        "milk chocolate",
+        "Java origin chocolate",
+        "cream",
+        "sugar",
+        "butter"
+      ],
+      "image": "https://www.neuhauschocolates.com/dw/image/v2/BFRH_PRD/on/demandware.static/-/Sites-neuhaus-catalog-master/default/dwf065c4c6/Pralines/Pralines%20transparent/5022685%20Louise%20Closed%20-%20GB%20-%201000x1000px.png?sw=100",
+      "price": null,
+      "tags": [
+        "heritage",
+        "milk",
+        "origin",
+        "java",
+        "family"
+      ],
+      "pairings": [
+        "darjeeling-tea",
+        "light-red-wine",
+        "rosé-champagne"
+      ],
+      "available": true
+    },
+    {
+      "id": "prl-012",
+      "name": "Suzanne",
+      "description": "Named after Suzanne Neuhaus, daughter of Jean Neuhaus. A dark chocolate shell with a melodic fusion of intensely dark ganache, fresh raspberries, and a refined praliné layer.",
+      "category": "cat-007",
+      "chocolateType": "dark",
+      "flavorProfile": [
+        "raspberry",
+        "intense",
+        "fruity",
+        "refreshing"
+      ],
+      "filling": "Raspberry ganache with praliné",
+      "ingredients": [
+        "dark chocolate",
+        "raspberry",
+        "praliné",
+        "cream",
+        "sugar"
+      ],
+      "image": "https://www.neuhauschocolates.com/dw/image/v2/BFRH_PRD/on/demandware.static/-/Sites-neuhaus-catalog-master/default/dw3b357449/Pralines/Small-5023993%20Suzanne%2071-_closed_620px%20(1).jpg?sw=100",
+      "price": null,
+      "tags": [
+        "heritage",
+        "dark",
+        "raspberry",
+        "family",
+        "fruity"
+      ],
+      "pairings": [
+        "pinot-noir",
+        "framboise",
+        "rose-champagne"
+      ],
+      "available": true
+    },
+    {
+      "id": "prl-013",
+      "name": "Albert",
+      "description": "Created to honour the royal wedding of Prince Albert and Princess Paola. A noble combination of hazelnut praliné, dark chocolate, and a caramelised Piedmont hazelnut at the core.",
+      "category": "cat-007",
+      "chocolateType": "dark",
+      "flavorProfile": [
+        "hazelnut",
+        "caramel",
+        "intense",
+        "royal"
+      ],
+      "filling": "Hazelnut praliné with caramelised Piedmont hazelnut",
+      "ingredients": [
+        "dark chocolate",
+        "Piedmont hazelnuts",
+        "caramel",
+        "sugar",
+        "cocoa butter"
+      ],
+      "image": "https://www.neuhauschocolates.com/dw/image/v2/BFRH_PRD/on/demandware.static/-/Sites-neuhaus-catalog-master/default/dwa21f9814/Pralines/Pralines%20transparent/5020890%20Albert%20Closed%20-%20GB%20-%201000x1000px.png?sw=100",
+      "price": null,
+      "tags": [
+        "heritage",
+        "dark",
+        "hazelnut",
+        "royal",
+        "caramel"
+      ],
+      "pairings": [
+        "grappa",
+        "tawny-port",
+        "strong-espresso"
+      ],
+      "available": true
+    },
+    {
+      "id": "prl-014",
+      "name": "Galerie",
+      "description": "Named after the iconic Galeries Royales in Brussels. A dark chocolate shell with a delicate caramel ganache finished with Fleur de Sel from Guérande on a thin praliné layer.",
+      "category": "cat-007",
+      "chocolateType": "dark",
+      "flavorProfile": [
+        "salted-caramel",
+        "dark",
+        "fleur-de-sel",
+        "refined"
+      ],
+      "filling": "Caramel ganache with Fleur de Sel de Guérande and praliné",
+      "ingredients": [
+        "dark chocolate",
+        "caramel",
+        "cream",
+        "Fleur de Sel",
+        "praliné",
+        "sugar"
+      ],
+      "image": "https://www.neuhauschocolates.com/dw/image/v2/BFRH_PRD/on/demandware.static/-/Sites-neuhaus-catalog-master/default/dwadfde3a8/Pralines/Small-5024016%20-%20Galerie_closed_620px%20(1).jpg?sw=100",
+      "price": null,
+      "tags": [
+        "heritage",
+        "dark",
+        "salted-caramel",
+        "fleur-de-sel",
+        "brussels"
+      ],
+      "pairings": [
+        "scotch-whisky",
+        "calvados",
+        "flat-white"
+      ],
+      "available": true
+    },
+    {
+      "id": "prl-015",
+      "name": "Plaisir",
+      "description": "A legendary chocolate: traditional artisan nougatine hand-filled with a Piedmont hazelnut ganache, coated in fine Belgian milk chocolate.",
+      "category": "cat-001",
+      "chocolateType": "milk",
+      "flavorProfile": [
+        "hazelnut",
+        "nougatine",
+        "crunchy",
+        "milky"
+      ],
+      "filling": "Piedmont hazelnut ganache",
+      "ingredients": [
+        "milk chocolate",
+        "Piedmont hazelnuts",
+        "nougatine",
+        "cream",
+        "sugar"
+      ],
+      "image": "https://www.neuhauschocolates.com/dw/image/v2/BFRH_PRD/on/demandware.static/-/Sites-neuhaus-catalog-master/default/dwd04828df/Pralines/Pralines%20transparent/5020364%20Plaisir%20Closed%20-%20GB%20-%201000x1000px.png?sw=100",
+      "price": null,
+      "tags": [
+        "irresistibles",
+        "milk",
+        "nougatine",
+        "hazelnut",
+        "legendary"
+      ],
+      "pairings": [
+        "latte",
+        "aged-wine",
+        "amaretto"
+      ],
+      "available": true
+    },
+    {
+      "id": "prl-016",
+      "name": "Divine",
+      "description": "A milk chocolate praline with a divine name — revealing the lightness of perfectly whipped fresh cream with vanilla. Smooth, airy, and indulgent.",
+      "category": "cat-005",
+      "chocolateType": "milk",
+      "flavorProfile": [
+        "vanilla",
+        "creamy",
+        "light",
+        "airy"
+      ],
+      "filling": "Vanilla fresh cream",
+      "ingredients": [
+        "milk chocolate",
+        "cream",
+        "vanilla",
+        "sugar",
+        "butter"
+      ],
+      "image": "https://www.neuhauschocolates.com/dw/image/v2/BFRH_PRD/on/demandware.static/-/Sites-neuhaus-catalog-master/default/dw4694c3af/Pralines/Pralines%20transparent/5020808%20Divine%20Closed%20-%20GB%20-%201000x1000px.png?sw=100",
+      "price": null,
+      "tags": [
+        "milk",
+        "vanilla",
+        "cream",
+        "classic"
+      ],
+      "pairings": [
+        "chamomile-tea",
+        "moscato",
+        "flat-white"
+      ],
+      "available": true
+    },
+    {
+      "id": "prl-017",
+      "name": "Madison",
+      "description": "Enriched with 'feuilletine' — crispy French wafers — combined with smooth praliné filling, coated in milk chocolate. A satisfying textural contrast.",
+      "category": "cat-004",
+      "chocolateType": "milk",
+      "flavorProfile": [
+        "crunchy",
+        "hazelnut",
+        "wafer",
+        "caramel"
+      ],
+      "filling": "Praliné with feuilletine wafers",
+      "ingredients": [
+        "milk chocolate",
+        "feuilletine",
+        "praliné",
+        "hazelnuts",
+        "sugar"
+      ],
+      "image": "https://www.neuhauschocolates.com/dw/image/v2/BFRH_PRD/on/demandware.static/-/Sites-neuhaus-catalog-webshop-eu/default/madison.jpg",
+      "price": null,
+      "tags": [
+        "milk",
+        "feuilletine",
+        "praliné",
+        "crunchy"
+      ],
+      "pairings": [
+        "milk-coffee",
+        "hot-chocolate",
+        "riesling"
+      ],
+      "available": true
+    },
+    {
+      "id": "prl-018",
+      "name": "Criollo 80%",
+      "description": "Named after the rare Criollo cocoa bean. An intense dark chocolate (80%) experience for the true connoisseur, with barely any filling to let the chocolate speak for itself.",
+      "category": "cat-008",
+      "chocolateType": "dark",
+      "flavorProfile": [
+        "intense",
+        "bitter",
+        "earthy",
+        "complex"
+      ],
+      "filling": "Pure dark chocolate (80% cocoa)",
+      "ingredients": [
+        "dark chocolate 80%",
+        "cocoa mass",
+        "cocoa butter",
+        "sugar"
+      ],
+      "image": "https://www.neuhauschocolates.com/dw/image/v2/BFRH_PRD/on/demandware.static/-/Sites-neuhaus-catalog-master/default/dwc0aac3af/Pralines/Pralines%20transparent/5000269%20Criollo%20Closed%20-%20GB%20-%201000x1000px.png?sw=100",
+      "price": null,
+      "tags": [
+        "dark",
+        "origin",
+        "intense",
+        "criollo",
+        "single-origin",
+        "connoisseur"
+      ],
+      "pairings": [
+        "aged-rum",
+        "armagnac",
+        "black-coffee"
+      ],
+      "available": true
+    },
+    {
+      "id": "prl-019",
+      "name": "Trillion 64%",
+      "description": "A dark chocolate ganache (64% cocoa) with a Peruvian single-origin filling. Fruity notes balanced with a rich, smooth finish.",
+      "category": "cat-008",
+      "chocolateType": "dark",
+      "flavorProfile": [
+        "fruity",
+        "intense",
+        "origin",
+        "balanced"
+      ],
+      "filling": "Peruvian dark chocolate ganache (64%)",
+      "ingredients": [
+        "dark chocolate 64%",
+        "cream",
+        "cocoa mass",
+        "sugar"
+      ],
+      "image": "https://www.neuhauschocolates.com/dw/image/v2/BFRH_PRD/on/demandware.static/-/Sites-neuhaus-catalog-master/default/dwa04f5072/Pralines/Pralines%20transparent/4023994_Trillion-dark_closed_1000px.png?sw=100",
+      "price": null,
+      "tags": [
+        "dark",
+        "origin",
+        "peru",
+        "ganache",
+        "single-origin"
+      ],
+      "pairings": [
+        "malbec",
+        "port",
+        "espresso"
+      ],
+      "available": true
+    },
+    {
+      "id": "prl-020",
+      "name": "Neuhaus Lait",
+      "description": "A classic smooth milk chocolate praline — simple, balanced, and loved for generations. Made with premium Belgian milk chocolate and a soft praliné filling.",
+      "category": "cat-004",
+      "chocolateType": "milk",
+      "flavorProfile": [
+        "milky",
+        "smooth",
+        "hazelnut",
+        "sweet"
+      ],
+      "filling": "Soft hazelnut praliné",
+      "ingredients": [
+        "milk chocolate",
+        "hazelnuts",
+        "sugar",
+        "cocoa butter"
+      ],
+      "image": "https://www.neuhauschocolates.com/dw/image/v2/BFRH_PRD/on/demandware.static/-/Sites-neuhaus-catalog-master/default/dw5411db6b/Pralines/Pralines%20transparent/4023997_Neuhaus-lait_closed_1000px.png?sw=100",
+      "price": null,
+      "tags": [
+        "milk",
+        "praliné",
+        "classic",
+        "smooth"
+      ],
+      "pairings": [
+        "café-au-lait",
+        "light-red-wine",
+        "vanilla-tea"
+      ],
+      "available": true
+    },
+    {
+      "id": "prl-021",
+      "name": "Frisson",
+      "description": "A praline designed to thrill — a dark chocolate shell with a smooth hazelnut praliné and a roasted, caramelized Piedmont hazelnut nestled at the centre.",
+      "category": "cat-004",
+      "chocolateType": "dark",
+      "flavorProfile": [
+        "hazelnut",
+        "roasted",
+        "caramel",
+        "intense"
+      ],
+      "filling": "Hazelnut praliné with caramelised hazelnut",
+      "ingredients": [
+        "dark chocolate",
+        "Piedmont hazelnuts",
+        "caramel",
+        "sugar"
+      ],
+      "image": "https://www.neuhauschocolates.com/dw/image/v2/BFRH_PRD/on/demandware.static/-/Sites-neuhaus-catalog-master/default/dw234b9893/Pralines/Small-5025534%20Frisson_closed_hr.jpg?sw=100",
+      "price": null,
+      "tags": [
+        "dark",
+        "hazelnut",
+        "praliné",
+        "caramel",
+        "crunchy-centre"
+      ],
+      "pairings": [
+        "bourbon",
+        "hazelnut-liqueur",
+        "lungo"
+      ],
+      "available": true
+    },
+    {
+      "id": "prl-022",
+      "name": "Folie",
+      "description": "A playful, indulgent praline — white chocolate with a dark chocolate mousse on a thin layer of melt-in-the-mouth gianduja. A contrast of textures and flavours.",
+      "category": "cat-003",
+      "chocolateType": "white",
+      "flavorProfile": [
+        "creamy",
+        "mousse",
+        "gianduja",
+        "contrasting"
+      ],
+      "filling": "Dark chocolate mousse on gianduja",
+      "ingredients": [
+        "white chocolate",
+        "dark chocolate",
+        "gianduja",
+        "cream",
+        "hazelnuts",
+        "sugar"
+      ],
+      "image": "https://www.neuhauschocolates.com/dw/image/v2/BFRH_PRD/on/demandware.static/-/Sites-neuhaus-catalog-master/default/dw4ebe43dc/Pralines/Small-Folie_side.jpg?sw=100",
+      "price": null,
+      "tags": [
+        "white",
+        "mousse",
+        "gianduja",
+        "contrasting",
+        "playful"
+      ],
+      "pairings": [
+        "prosecco",
+        "sweet-white-wine",
+        "vanilla-latte"
+      ],
+      "available": true
+    },
+    {
+      "id": "prl-023",
+      "name": "Coeur Praliné",
+      "description": "A heart-shaped praline filled with silky smooth almond and hazelnut praliné. A celebration of the finest praliné craftsmanship.",
+      "category": "cat-004",
+      "chocolateType": "milk",
+      "flavorProfile": [
+        "almond",
+        "hazelnut",
+        "smooth",
+        "sweet"
+      ],
+      "filling": "Smooth almond and hazelnut praliné",
+      "ingredients": [
+        "milk chocolate",
+        "almonds",
+        "hazelnuts",
+        "sugar",
+        "cocoa butter"
+      ],
+      "image": "https://www.neuhauschocolates.com/dw/image/v2/BFRH_PRD/on/demandware.static/-/Sites-neuhaus-catalog-master/default/dw7460e49f/Pralines/Small-5024017%20Coeur%20praline_closed_620px%20(1).jpg?sw=100",
+      "price": null,
+      "tags": [
+        "milk",
+        "praliné",
+        "heart-shaped",
+        "almond",
+        "hazelnut"
+      ],
+      "pairings": [
+        "rosé-wine",
+        "champagne",
+        "herbal-tea"
+      ],
+      "available": true
+    },
+    {
+      "id": "prl-024",
+      "name": "Bonbon Salted Caramel",
+      "description": "A small indulgent confection filled with Neuhaus authentic caramel made in copper pots, with a hint of sea salt. Milk chocolate shell.",
+      "category": "cat-006",
+      "chocolateType": "milk",
+      "flavorProfile": [
+        "salted-caramel",
+        "sweet",
+        "buttery",
+        "milky"
+      ],
+      "filling": "Salted caramel",
+      "ingredients": [
+        "milk chocolate",
+        "caramel",
+        "cream",
+        "butter",
+        "sea salt",
+        "sugar"
+      ],
+      "image": "https://www.neuhauschocolates.com/dw/image/v2/BFRH_PRD/on/demandware.static/-/Sites-neuhaus-catalog-master/default/dwccdd1f93/Pralines/Pralines%20transparent/5021563%20Bonbon%20Salted%20Caramel%20Closed%20-%20GB%20-%201000x1000px.png?sw=100",
+      "price": null,
+      "tags": [
+        "milk",
+        "caramel",
+        "salted",
+        "bonbon"
+      ],
+      "pairings": [
+        "calvados",
+        "salted-caramel-latte",
+        "toffee-ale"
+      ],
+      "available": true
+    },
+    {
+      "id": "prl-025",
+      "name": "Bloc Gianduja",
+      "description": "Pure gianduja paste in block form. A delicate balance of hazelnuts, chocolate, and sugar — appreciate the pure flavour without distraction.",
+      "category": "cat-003",
+      "chocolateType": "milk",
+      "flavorProfile": [
+        "hazelnut",
+        "pure",
+        "creamy",
+        "smooth"
+      ],
+      "filling": "Pure gianduja (no shell)",
+      "ingredients": [
+        "hazelnuts",
+        "milk chocolate",
+        "sugar"
+      ],
+      "image": "https://www.neuhauschocolates.com/dw/image/v2/BFRH_PRD/on/demandware.static/-/Sites-neuhaus-catalog-master/default/dwbe7cd670/Pralines/Pralines%20transparent/5021214%20Bloc%20Gianduja%20Closed%20-%20GB%20-%201000x1000px.png?sw=100",
+      "price": null,
+      "tags": [
+        "gianduja",
+        "pure",
+        "hazelnut",
+        "no-shell"
+      ],
+      "pairings": [
+        "hazelnut-coffee",
+        "amaretto",
+        "milk"
+      ],
+      "available": true
+    },
+    {
+      "id": "prl-026",
+      "name": "Art Déco",
+      "description": "A bold 72% dark chocolate shell beautifully balanced with smooth California almond and hazelnut praliné — a sophisticated geometric piece.",
+      "category": "cat-004",
+      "chocolateType": "dark",
+      "flavorProfile": [
+        "intense",
+        "almond",
+        "hazelnut",
+        "balanced"
+      ],
+      "filling": "California almond and hazelnut praliné",
+      "ingredients": [
+        "dark chocolate 72%",
+        "California almonds",
+        "hazelnuts",
+        "sugar"
+      ],
+      "image": "https://www.neuhauschocolates.com/dw/image/v2/BFRH_PRD/on/demandware.static/-/Sites-neuhaus-catalog-webshop-eu/default/art-deco.jpg",
+      "price": null,
+      "tags": [
+        "dark",
+        "praliné",
+        "almond",
+        "hazelnut",
+        "geometric"
+      ],
+      "pairings": [
+        "bold-red-wine",
+        "armagnac",
+        "espresso"
+      ],
+      "available": true
+    },
+    {
+      "id": "prl-027",
+      "name": "Art Nouveau",
+      "description": "A dark chocolate shell holding an intense dark chocolate ganache enriched with a subtle hint of hazelnut, in a beautifully curved art nouveau shape.",
+      "category": "cat-005",
+      "chocolateType": "dark",
+      "flavorProfile": [
+        "intense",
+        "dark-chocolate",
+        "hazelnut",
+        "smooth"
+      ],
+      "filling": "Dark chocolate ganache with hazelnut",
+      "ingredients": [
+        "dark chocolate",
+        "cream",
+        "hazelnuts",
+        "cocoa mass",
+        "sugar"
+      ],
+      "image": "https://www.neuhauschocolates.com/dw/image/v2/BFRH_PRD/on/demandware.static/-/Sites-neuhaus-catalog-master/default/dw5a070b1e/Pralines/Pralines%20transparent/5022683%20Artnouveau%20Closed%20-%20GB%20-%201000x1000px.png?sw=100",
+      "price": null,
+      "tags": [
+        "dark",
+        "ganache",
+        "hazelnut",
+        "smooth"
+      ],
+      "pairings": [
+        "single-malt",
+        "shiraz",
+        "black-coffee"
+      ],
+      "available": true
+    },
+    {
+      "id": "prl-028",
+      "name": "1857 Dandoy",
+      "description": "A tribute to 1857 — the year Neuhaus was founded. Filled with praliné made with iconic Dandoy speculoos biscuit, a beloved Belgian pairing.",
+      "category": "cat-004",
+      "chocolateType": "milk",
+      "flavorProfile": [
+        "speculoos",
+        "spiced",
+        "cinnamon",
+        "caramel"
+      ],
+      "filling": "Praliné with Dandoy speculoos",
+      "ingredients": [
+        "milk chocolate",
+        "speculoos",
+        "praliné",
+        "hazelnuts",
+        "cinnamon",
+        "sugar"
+      ],
+      "image": "https://www.neuhauschocolates.com/dw/image/v2/BFRH_PRD/on/demandware.static/-/Sites-neuhaus-catalog-master/default/dw7d0f91ed/Pralines/Small-5021213%201857%20Closed%20-%20GB%20-%201000x1000px.jpg?sw=100",
+      "price": null,
+      "tags": [
+        "milk",
+        "speculoos",
+        "praliné",
+        "belgian",
+        "spiced",
+        "collaboration"
+      ],
+      "pairings": [
+        "black-tea",
+        "chai-latte",
+        "aged-wine"
+      ],
+      "available": true
+    },
+    {
+      "id": "prl-029",
+      "name": "Diamant",
+      "description": "A diamond-shaped praline with an elegant appearance. Filled with smooth hazelnut praliné made with the finest hazelnuts from Piedmont.",
+      "category": "cat-004",
+      "chocolateType": "dark",
+      "flavorProfile": [
+        "hazelnut",
+        "smooth",
+        "refined",
+        "praliné"
+      ],
+      "filling": "Smooth Piedmont hazelnut praliné",
+      "ingredients": [
+        "dark chocolate",
+        "Piedmont hazelnuts",
+        "sugar",
+        "cocoa butter"
+      ],
+      "image": "https://www.neuhauschocolates.com/dw/image/v2/BFRH_PRD/on/demandware.static/-/Sites-neuhaus-catalog-master/default/dw01c499a5/Pralines/Pralines%20transparent/4024019_Diamant-white_closed_1000px.png?sw=100",
+      "price": null,
+      "tags": [
+        "dark",
+        "praliné",
+        "hazelnut",
+        "geometric",
+        "diamond"
+      ],
+      "pairings": [
+        "cognac",
+        "port",
+        "espresso"
+      ],
+      "available": true
+    },
+    {
+      "id": "prl-030",
+      "name": "Astrid",
+      "description": "A praline dedicated to royalty — a delicate milk chocolate shell with a light fresh cream filling, named in the Belgian tradition of royal homage.",
+      "category": "cat-007",
+      "chocolateType": "milk",
+      "flavorProfile": [
+        "creamy",
+        "delicate",
+        "sweet",
+        "light"
+      ],
+      "filling": "Fresh cream",
+      "ingredients": [
+        "milk chocolate",
+        "cream",
+        "sugar",
+        "butter"
+      ],
+      "image": "https://www.neuhauschocolates.com/dw/image/v2/BFRH_PRD/on/demandware.static/-/Sites-neuhaus-catalog-master/default/dwa043fde0/Pralines/5000163%20Astrid%20Closed.jpg?sw=100",
+      "price": null,
+      "tags": [
+        "milk",
+        "cream",
+        "royal",
+        "heritage"
+      ],
+      "pairings": [
+        "jasmine-tea",
+        "sparkling-wine",
+        "rosé"
+      ],
+      "available": true
+    },
+    {
+      "id": "prl-031",
+      "name": "Mathilde",
+      "description": "A white chocolate praline named in the Belgian royal tradition, filled with a light mousse filling complemented by a delicate fruit note.",
+      "category": "cat-007",
+      "chocolateType": "white",
+      "flavorProfile": [
+        "sweet",
+        "light",
+        "fruity",
+        "creamy"
+      ],
+      "filling": "Fruit cream",
+      "ingredients": [
+        "white chocolate",
+        "cream",
+        "fruit",
+        "sugar",
+        "butter"
+      ],
+      "image": "https://www.neuhauschocolates.com/dw/image/v2/BFRH_PRD/on/demandware.static/-/Sites-neuhaus-catalog-master/default/dw09e30cb1/Pralines/Pralines%20transparent/5021992%20Mathilde%20Closed%20-%20GB%20-%201000x1000px.png?sw=100",
+      "price": null,
+      "tags": [
+        "white",
+        "fruity",
+        "cream",
+        "royal",
+        "heritage"
+      ],
+      "pairings": [
+        "prosecco",
+        "riesling",
+        "flower-tea"
+      ],
+      "available": true
+    },
+    {
+      "id": "prl-032",
+      "name": "Bonbon Cookies",
+      "description": "A playful milk chocolate bonbon filled with smooth praliné and pieces of crispy cookie, delivering a satisfying crunch with every bite.",
+      "category": "cat-009",
+      "chocolateType": "milk",
+      "flavorProfile": [
+        "cookie",
+        "crunchy",
+        "sweet",
+        "praliné"
+      ],
+      "filling": "Praliné with cookie pieces",
+      "ingredients": [
+        "milk chocolate",
+        "praliné",
+        "cookie",
+        "hazelnuts",
+        "sugar"
+      ],
+      "image": "https://www.neuhauschocolates.com/dw/image/v2/BFRH_PRD/on/demandware.static/-/Sites-neuhaus-catalog-master/default/dwb94ce339/Pralines/Pralines%20transparent/5021561%20Bonbon%20Cookies%20Closed%20-%20GB%20-%201000x1000px.png?sw=100",
+      "price": null,
+      "tags": [
+        "milk",
+        "bonbon",
+        "cookie",
+        "crunchy",
+        "praliné"
+      ],
+      "pairings": [
+        "milk",
+        "hot-chocolate",
+        "café-au-lait"
+      ],
+      "available": true
+    },
+    {
+      "id": "prl-033",
+      "name": "Cérisette",
+      "description": "A whole cherry including stalk and stone, slowly macerated in alcohol, enrobed in fine dark chocolate. A timeless Belgian classic made with great patience.",
+      "category": "cat-009",
+      "chocolateType": "dark",
+      "flavorProfile": [
+        "cherry",
+        "alcohol",
+        "fruity",
+        "bitter"
+      ],
+      "filling": "Whole cherry macerated in alcohol",
+      "ingredients": [
+        "dark chocolate",
+        "cherry",
+        "alcohol",
+        "sugar"
+      ],
+      "image": "https://www.neuhauschocolates.com/dw/image/v2/BFRH_PRD/on/demandware.static/-/Sites-neuhaus-catalog-webshop-eu/default/cerisette.jpg",
+      "price": null,
+      "tags": [
+        "dark",
+        "cherry",
+        "alcohol",
+        "classic",
+        "whole-fruit"
+      ],
+      "pairings": [
+        "kirsch",
+        "ruby-port",
+        "dark-beer"
+      ],
+      "available": true
+    },
+    {
+      "id": "prl-034",
+      "name": "Marzipan Dark",
+      "description": "Pure marzipan made with 50% almonds from Faro, Portugal, covered in intense dark chocolate. A study in elegant simplicity.",
+      "category": "cat-010",
+      "chocolateType": "dark",
+      "flavorProfile": [
+        "almond",
+        "marzipan",
+        "sweet",
+        "nutty"
+      ],
+      "filling": "Faro almond marzipan",
+      "ingredients": [
+        "dark chocolate",
+        "almonds",
+        "sugar"
+      ],
+      "image": "https://www.neuhauschocolates.com/dw/image/v2/BFRH_PRD/on/demandware.static/-/Sites-neuhaus-catalog-webshop-eu/default/marzipan-dark.jpg",
+      "price": null,
+      "tags": [
+        "dark",
+        "marzipan",
+        "almond",
+        "portugal",
+        "classic"
+      ],
+      "pairings": [
+        "fino-sherry",
+        "sweet-wine",
+        "green-tea"
+      ],
+      "available": true
+    },
+    {
+      "id": "prl-035",
+      "name": "Horta",
+      "description": "A milk chocolate praline with an original, elegant shape, filled with a surprising almond praliné enriched with nougat from Montélimar.",
+      "category": "cat-004",
+      "chocolateType": "milk",
+      "flavorProfile": [
+        "almond",
+        "nougat",
+        "sweet",
+        "soft"
+      ],
+      "filling": "Almond praliné with Montélimar nougat",
+      "ingredients": [
+        "milk chocolate",
+        "almonds",
+        "nougat",
+        "sugar",
+        "honey"
+      ],
+      "image": "https://www.neuhauschocolates.com/dw/image/v2/BFRH_PRD/on/demandware.static/-/Sites-neuhaus-catalog-webshop-eu/default/horta.jpg",
+      "price": null,
+      "tags": [
+        "milk",
+        "almond",
+        "nougat",
+        "montélimar",
+        "praliné"
+      ],
+      "pairings": [
+        "lavender-tea",
+        "muscat",
+        "light-espresso"
+      ],
+      "available": true
+    },
+    {
+      "id": "prl-036",
+      "name": "Pierre",
+      "description": "A tribute to Pierre de Gavre, grandson of Jean Neuhaus. A harmonious balance of caramelised salted butter, crunchy caramel pieces, and smooth caramel ganache.",
+      "category": "cat-006",
+      "chocolateType": "dark",
+      "flavorProfile": [
+        "salted-caramel",
+        "buttery",
+        "crunchy",
+        "intense"
+      ],
+      "filling": "Caramelised salted butter with crunchy caramel",
+      "ingredients": [
+        "dark chocolate",
+        "caramel",
+        "salted butter",
+        "cream",
+        "sugar"
+      ],
+      "image": "https://www.neuhauschocolates.com/dw/image/v2/BFRH_PRD/on/demandware.static/-/Sites-neuhaus-catalog-master/default/dw50a9e67b/Pralines/Praline%20ECOM-Pierre_closed_hr.png?sw=100",
+      "price": null,
+      "tags": [
+        "dark",
+        "caramel",
+        "salted",
+        "heritage",
+        "crunchy"
+      ],
+      "pairings": [
+        "calvados",
+        "bourbon",
+        "aged-rum"
+      ],
+      "available": true
+    },
+    {
+      "id": "prl-037",
+      "name": "Fraise des Bois",
+      "description": "A colourful praline with a melt-in-the-mouth creamy filling flavoured with wild strawberry. Light, fruity, and refreshing.",
+      "category": "cat-009",
+      "chocolateType": "white",
+      "flavorProfile": [
+        "strawberry",
+        "fruity",
+        "sweet",
+        "fresh"
+      ],
+      "filling": "Wild strawberry cream",
+      "ingredients": [
+        "white chocolate",
+        "strawberry",
+        "cream",
+        "sugar",
+        "butter"
+      ],
+      "image": "https://www.neuhauschocolates.com/dw/image/v2/BFRH_PRD/on/demandware.static/-/Sites-neuhaus-catalog-webshop-eu/default/fraise-des-bois.jpg",
+      "price": null,
+      "tags": [
+        "white",
+        "strawberry",
+        "fruity",
+        "summer",
+        "colorful"
+      ],
+      "pairings": [
+        "rosé-champagne",
+        "strawberry-tea",
+        "sweet-rosé"
+      ],
+      "available": true
+    },
+    {
+      "id": "prl-038",
+      "name": "Neuhaus Dark",
+      "description": "An intense pure dark praline (52% cocoa) — bold, smooth, and deeply satisfying. A foundational classic of the Neuhaus range.",
+      "category": "cat-005",
+      "chocolateType": "dark",
+      "flavorProfile": [
+        "intense",
+        "bitter",
+        "smooth",
+        "pure"
+      ],
+      "filling": "Dark chocolate ganache (52%)",
+      "ingredients": [
+        "dark chocolate 52%",
+        "cream",
+        "cocoa mass",
+        "sugar",
+        "cocoa butter"
+      ],
+      "image": "https://www.neuhauschocolates.com/dw/image/v2/BFRH_PRD/on/demandware.static/-/Sites-neuhaus-catalog-master/default/dwf446da3d/Pralines/Pralines%20transparent/4023996_Neuhaus-fondant_closed_1000px.png?sw=100",
+      "price": null,
+      "tags": [
+        "dark",
+        "pure",
+        "classic",
+        "ganache",
+        "foundational"
+      ],
+      "pairings": [
+        "espresso",
+        "red-wine",
+        "single-malt"
+      ],
+      "available": true
+    }
+  ],
+  "pairingSuggestions": [
+    {
+      "id": "pair-001",
+      "name": "Champagne & Bubbles",
+      "description": "Light, crispy pralines and vanilla or fruit-forward fillings pair beautifully with Champagne, Prosecco, or Cava.",
+      "recommendedPralineIds": [
+        "prl-001",
+        "prl-003",
+        "prl-023",
+        "prl-037"
+      ],
+      "beverages": [
+        "champagne",
+        "prosecco",
+        "cava",
+        "rosé-champagne"
+      ]
+    },
+    {
+      "id": "pair-002",
+      "name": "Coffee Pairing",
+      "description": "Hazelnut pralinés and coffee ganaches enhance the roasted notes of a well-brewed espresso or flat white.",
+      "recommendedPralineIds": [
+        "prl-002",
+        "prl-005",
+        "prl-007",
+        "prl-021"
+      ],
+      "beverages": [
+        "espresso",
+        "flat-white",
+        "cappuccino",
+        "lungo"
+      ]
+    },
+    {
+      "id": "pair-003",
+      "name": "Whisky & Spirits",
+      "description": "Intense dark chocolates and single-origin ganaches find their match in aged spirits with complexity.",
+      "recommendedPralineIds": [
+        "prl-010",
+        "prl-018",
+        "prl-019",
+        "prl-036"
+      ],
+      "beverages": [
+        "single-malt-whisky",
+        "bourbon",
+        "armagnac",
+        "aged-rum"
+      ]
+    },
+    {
+      "id": "pair-004",
+      "name": "Wine & Port",
+      "description": "Fruity and caramel-forward pralines shine alongside red wines and tawny port.",
+      "recommendedPralineIds": [
+        "prl-012",
+        "prl-024",
+        "prl-029",
+        "prl-033"
+      ],
+      "beverages": [
+        "pinot-noir",
+        "tawny-port",
+        "ruby-port",
+        "malbec"
+      ]
+    },
+    {
+      "id": "pair-005",
+      "name": "Tea Time",
+      "description": "Delicate, creamy, and marzipan pralines make perfect companions for quality loose-leaf teas.",
+      "recommendedPralineIds": [
+        "prl-006",
+        "prl-016",
+        "prl-034",
+        "prl-030"
+      ],
+      "beverages": [
+        "earl-grey-tea",
+        "jasmine-tea",
+        "darjeeling-tea",
+        "chamomile-tea"
+      ]
+    },
+    {
+      "id": "pair-006",
+      "name": "Belgian Classics",
+      "description": "Celebrate Belgian heritage by pairing speculoos and caramel pralines with a warm cup of café au lait.",
+      "recommendedPralineIds": [
+        "prl-028",
+        "prl-024",
+        "prl-015",
+        "prl-020"
+      ],
+      "beverages": [
+        "café-au-lait",
+        "hot-chocolate",
+        "black-tea"
+      ]
+    }
+  ]
+}

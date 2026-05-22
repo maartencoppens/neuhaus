@@ -38,6 +38,8 @@ select {
   --gold: #c9a961;
   --gold-transparent: #c9a96120;
   --brown: #5c4a38;
+  --brown-transparent: #5c4a3850;
+  --white-transparent: #d0d0d025;
 
   --text-base: 1rem;
 }
@@ -48,6 +50,9 @@ select {
   --color-text-light: var(--gold);
   --color-background-primary: var(--white);
   --color-background-secondary: var(--gold-transparent);
+  --color-background-tertiary: var(--brown);
+  --color-background-quaternary: var(--white-transparent);
+  --color-border: var(--brown-transparent);
   --color-primary: var(--gold);
 
   --spacing-font-sm: 0.8rem;
@@ -72,4 +77,20 @@ select {
 body {
   font-size: var(--text-base);
   font-family: sans-serif;
+}
+
+.label-text {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  letter-spacing: 2.5px;
+}
+
+.white-gradient {
+  background: linear-gradient(
+    to bottom right,
+    #d6c29a 0%,
+    #e8dcc4 50%,
+    #d6c29a 100%
+  );
 }
