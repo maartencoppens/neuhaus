@@ -90,16 +90,32 @@ const BoxOverview = () => {
               <p className="text-lg font-bold">Praline Naam</p>
             </div>
           </div>
+          <div className="border-t border-border pt-sm">
+            <p className="label-text">pair with</p>
+            <div className="w-full h-4">{/* Hier komt de pairing info */}</div>
+            <Button
+              className="w-full uppercase"
+              label="replace praline"
+              link="/Box"
+              variant={"secondary"}
+            />
+          </div>
         </Card>
 
         <Card className="flex flex-1 flex-col gap-sm px-lg">
-          <p className="label-text">Gift note</p>
-          <p>Add a personal message or special request here.</p>
+          <p className="label-text">Personal message</p>
+          <textarea
+            name="message"
+            id="message"
+            className="border border-border h-full focus:outline-none p-0.5"
+          ></textarea>
         </Card>
 
-        <Card className="flex items-end px-lg">
-          <Button label="Proceed to checkout" link="/checkout" />
-        </Card>
+        <Button
+          label="Proceed to checkout"
+          link="/checkout"
+          className="w-full uppercase"
+        />
       </div>
     </section>
   );
