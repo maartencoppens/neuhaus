@@ -1,80 +1,56 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Card from "../components/Card";
 import Button from "../components/Button";
 import GridItem from "../components/GridItem";
+import usePralineStore from "../store/usePralineStore";
+import { matchPralines } from "../helpers/matchPralines";
+import database from "../data/database.json";
 
 const BoxOverview = () => {
-  const [currentPraline, setCurrentPraline] = React.useState(null);
+  const tasteTags = usePralineStore((state) => state.tasteTags);
+  const [boxPralines, setBoxPralines] = useState([]);
+  useEffect(() => {
+    const matchedPralines = matchPralines(database.pralines, tasteTags, 16);
+    setBoxPralines(matchedPralines);
+  }, [tasteTags]);
+  console.log(boxPralines);
+
+  useEffect(() => {
+    const brokenImages = [];
+
+    Promise.all(
+      database.pralines.map((praline) => {
+        return new Promise((resolve) => {
+          const img = new Image();
+
+          img.onload = resolve;
+
+          img.onerror = () => {
+            brokenImages.push({
+              name: praline.name,
+              image: praline.image,
+            });
+
+            resolve();
+          };
+
+          img.src = praline.image;
+        });
+      }),
+    ).then(() => {
+      console.table(brokenImages);
+      console.log(`Found ${brokenImages.length} broken images`);
+    });
+  }, []);
 
   return (
     <section className="grid flex-1 grid-cols-5 items-stretch gap-xl py-2xl">
       <div className="col-span-3 flex h-full flex-col gap-xl">
         <Card className="flex flex-1 flex-col gap-sm px-lg white-gradient">
           <div className="grid grid-cols-4 justify-center items-center gap-sm">
-            <GridItem
-              imageUrl="/images/chocolate1.jpg"
-              imageAlt="Chocolate 1"
-            />
-            <GridItem
-              imageUrl="/images/chocolate1.jpg"
-              imageAlt="Chocolate 1"
-            />
-            <GridItem
-              imageUrl="/images/chocolate1.jpg"
-              imageAlt="Chocolate 1"
-            />
-            <GridItem
-              imageUrl="/images/chocolate1.jpg"
-              imageAlt="Chocolate 1"
-            />
-            <GridItem
-              imageUrl="/images/chocolate1.jpg"
-              imageAlt="Chocolate 1"
-            />
-            <GridItem
-              imageUrl="/images/chocolate1.jpg"
-              imageAlt="Chocolate 1"
-            />
-            <GridItem
-              imageUrl="/images/chocolate1.jpg"
-              imageAlt="Chocolate 1"
-            />
-            <GridItem
-              imageUrl="/images/chocolate1.jpg"
-              imageAlt="Chocolate 1"
-            />
-            <GridItem
-              imageUrl="/images/chocolate1.jpg"
-              imageAlt="Chocolate 1"
-            />
-            <GridItem
-              imageUrl="/images/chocolate1.jpg"
-              imageAlt="Chocolate 1"
-            />
-            <GridItem
-              imageUrl="/images/chocolate1.jpg"
-              imageAlt="Chocolate 1"
-            />
-            <GridItem
-              imageUrl="/images/chocolate1.jpg"
-              imageAlt="Chocolate 1"
-            />
-            <GridItem
-              imageUrl="/images/chocolate1.jpg"
-              imageAlt="Chocolate 1"
-            />
-            <GridItem
-              imageUrl="/images/chocolate1.jpg"
-              imageAlt="Chocolate 1"
-            />
-            <GridItem
-              imageUrl="/images/chocolate1.jpg"
-              imageAlt="Chocolate 1"
-            />
-            <GridItem
-              imageUrl="/images/chocolate1.jpg"
-              imageAlt="Chocolate 1"
-            />
+            {boxPralines.map((praline) => (
+              <GridItem key={praline.id} praline={praline} />
+            ))}
           </div>
         </Card>
 

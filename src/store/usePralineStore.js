@@ -1,9 +1,10 @@
 import { create } from "zustand";
 
-const useChocolateStore = create((set) => ({
+const usePralineStore = create((set) => ({
   messages: [],
   answers: {},
   currentQuestionIndex: 0,
+  tasteTags: null,
 
   addMessage: (message) =>
     set((state) => ({
@@ -23,12 +24,18 @@ const useChocolateStore = create((set) => ({
       currentQuestionIndex: state.currentQuestionIndex + 1,
     })),
 
+  setTasteTags: (tags) =>
+    set({
+      tasteTags: tags,
+    }),
+
   resetChat: () =>
     set({
       messages: [],
       answers: {},
       currentQuestionIndex: 0,
+      tasteTags: null,
     }),
 }));
 
-export default useChocolateStore;
+export default usePralineStore;

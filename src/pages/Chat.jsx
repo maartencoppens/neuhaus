@@ -4,6 +4,7 @@ import AnswerLabel from "../components/AnswerLabel";
 import { useNavigate } from "react-router-dom";
 import { questions } from "../data/questionFlow";
 import usePralineStore from "../store/usePralineStore";
+import { interpretUserAnswer } from "../helpers/openrouter";
 
 const Chat = () => {
   const navigate = useNavigate();
@@ -19,6 +20,8 @@ const Chat = () => {
   const addMessage = usePralineStore((state) => state.addMessage);
   const saveAnswer = usePralineStore((state) => state.saveAnswer);
   const nextQuestion = usePralineStore((state) => state.nextQuestion);
+  const answers = usePralineStore((state) => state.answers);
+  const setTasteTags = usePralineStore((state) => state.setTasteTags);
 
   const messagesEndRef = useRef(null);
 
@@ -61,12 +64,35 @@ const Chat = () => {
         nextQuestion();
       }, 600);
     } else {
-      setTimeout(() => {
+      setTimeout(async () => {
         addMessage({
           role: "assistant",
           content:
             "Perfect, ik stel nu jouw gepersonaliseerde pralinedoos samen.",
         });
+
+        const finalAnswers = usePralineStore.getState().answers;
+
+        const directTags = {
+          chocolateType: finalAnswers.chocolateType
+            ? [finalAnswers.chocolateType]
+            : [],
+          flavors: finalAnswers.flavors ? [finalAnswers.flavors] : [],
+        };
+
+        const hasCustomText = Object.values(finalAnswers).some(
+          (answer) => typeof answer === "string" && answer.length > 15,
+        );
+
+        let tags;
+
+        if (hasCustomText) {
+          tags = await interpretUserAnswer(finalAnswers);
+        } else {
+          tags = directTags;
+        }
+
+        setTasteTags(tags);
 
         setTimeout(() => {
           navigate("/box");
