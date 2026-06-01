@@ -1,24 +1,31 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-const GridItem = ({ praline }) => {
+const GridItem = ({ praline, isSelected, onSelect }) => {
   const fallback = "/fallback.webp";
   const [src, setSrc] = useState(praline.image || fallback);
 
-  const handleError = () => {
-    if (src !== fallback) setSrc(fallback);
-  };
+  useEffect(() => {
+    setSrc(praline.image || fallback);
+  }, [praline.image]);
 
   return (
-    <div className="aspect-square overflow-hidden bg-background-quaternary rounded-3xl shadow-[inset_0px_0px_16px_0px_rgba(0,0,0,0.3)]">
+    <button
+      type="button"
+      className={`praline-cell border-0 p-0 appearance-none ${
+        isSelected ? "selected" : ""
+      }`}
+      onClick={() => onSelect(praline)}
+      aria-pressed={isSelected}
+    >
       <img
-        src={praline.image}
+        src={src}
         alt={praline.name}
-        onError={(e) => {
-          console.log("Broken image:", praline.name, praline.image);
+        onError={() => {
+          if (src !== fallback) setSrc(fallback);
         }}
         className="h-full w-full object-cover"
       />
-    </div>
+    </button>
   );
 };
 

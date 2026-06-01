@@ -5,6 +5,7 @@ const usePralineStore = create((set) => ({
   answers: {},
   currentQuestionIndex: 0,
   tasteTags: null,
+  selectedPraline: null,
 
   addMessage: (message) =>
     set((state) => ({
@@ -29,12 +30,18 @@ const usePralineStore = create((set) => ({
       tasteTags: tags,
     }),
 
+  setSelectedPraline: (praline) =>
+    set({
+      selectedPraline: praline,
+    }),
+
   resetChat: () =>
     set({
       messages: [],
       answers: {},
       currentQuestionIndex: 0,
       tasteTags: null,
+      selectedPraline: null,
     }),
 }));
 
