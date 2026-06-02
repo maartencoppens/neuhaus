@@ -40,6 +40,7 @@ select {
   --brown: #5c4a38;
   --brown-transparent: #5c4a3850;
   --white-transparent: #d0d0d025;
+  --button: #503223;
 
   --text-base: 1rem;
 }
@@ -54,8 +55,7 @@ select {
   --color-background-quaternary: var(--white-transparent);
   --color-border: var(--brown-transparent);
   --color-primary: var(--gold);
-
-  --spacing-font-sm: 0.8rem;
+  --color-button: var(--button);
 
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;

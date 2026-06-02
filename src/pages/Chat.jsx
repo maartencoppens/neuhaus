@@ -9,6 +9,7 @@ import { interpretUserAnswer } from "../helpers/openrouter";
 const Chat = () => {
   const navigate = useNavigate();
   const [customInput, setCustomInput] = useState("");
+  const [selectedValues, setSelectedValues] = useState([]);
 
   const hasStarted = useRef(false);
 
@@ -20,12 +21,18 @@ const Chat = () => {
   const addMessage = usePralineStore((state) => state.addMessage);
   const saveAnswer = usePralineStore((state) => state.saveAnswer);
   const nextQuestion = usePralineStore((state) => state.nextQuestion);
-  const answers = usePralineStore((state) => state.answers);
   const setTasteTags = usePralineStore((state) => state.setTasteTags);
 
   const messagesEndRef = useRef(null);
 
   const currentQuestion = questions[currentQuestionIndex];
+  const isMultiSelectQuestion = Boolean(currentQuestion?.multiple);
+
+  const toAnswerArray = (answer) => {
+    if (Array.isArray(answer)) return answer;
+    if (answer === undefined || answer === null || answer === "") return [];
+    return [answer];
+  };
 
   useEffect(() => {
     if (hasStarted.current) return;
@@ -44,7 +51,12 @@ const Chat = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
-  const handleAnswer = (answerLabel, answerValue) => {
+  useEffect(() => {
+    setSelectedValues([]);
+    setCustomInput("");
+  }, [currentQuestionIndex]);
+
+  const submitAnswer = (answerLabel, answerValue) => {
     addMessage({
       role: "user",
       content: answerLabel,
@@ -74,14 +86,14 @@ const Chat = () => {
         const finalAnswers = usePralineStore.getState().answers;
 
         const directTags = {
-          chocolateType: finalAnswers.chocolateType
-            ? [finalAnswers.chocolateType]
-            : [],
-          flavors: finalAnswers.flavors ? [finalAnswers.flavors] : [],
+          chocolateType: toAnswerArray(finalAnswers.chocolateType),
+          flavors: toAnswerArray(finalAnswers.flavors),
         };
 
-        const hasCustomText = Object.values(finalAnswers).some(
-          (answer) => typeof answer === "string" && answer.length > 15,
+        const hasCustomText = Object.values(finalAnswers).some((answer) =>
+          toAnswerArray(answer).some(
+            (value) => typeof value === "string" && value.length > 15,
+          ),
         );
 
         let tags;
@@ -101,10 +113,50 @@ const Chat = () => {
     }
   };
 
-  const handleCustomSubmit = () => {
-    if (!customInput.trim()) return;
+  const handleOptionSelect = (option) => {
+    if (!currentQuestion) return;
 
-    handleAnswer(customInput, customInput);
+    if (!isMultiSelectQuestion) {
+      submitAnswer(option.label, option.value);
+      return;
+    }
+
+    setSelectedValues((prev) => {
+      if (prev.includes(option.value)) {
+        return prev.filter((value) => value !== option.value);
+      }
+
+      return [...prev, option.value];
+    });
+  };
+
+  const submitCurrentAnswer = () => {
+    if (!currentQuestion) return;
+
+    const trimmedCustomInput = customInput.trim();
+
+    if (isMultiSelectQuestion) {
+      const values = trimmedCustomInput
+        ? [...selectedValues, trimmedCustomInput]
+        : selectedValues;
+
+      if (!values.length) return;
+
+      const labels = values.map(
+        (value) =>
+          currentQuestion.options.find((option) => option.value === value)
+            ?.label || value,
+      );
+
+      submitAnswer(labels.join(", "), values);
+      setSelectedValues([]);
+      setCustomInput("");
+      return;
+    }
+
+    if (!trimmedCustomInput) return;
+
+    submitAnswer(trimmedCustomInput, trimmedCustomInput);
     setCustomInput("");
   };
 
@@ -115,9 +167,7 @@ const Chat = () => {
           <p className="text-center text-text-light">Progress</p>
           <p className="text-center text-text-dark">
             <span className="text-4xl">
-              {Math.round(
-                ((currentQuestionIndex + 1) / questions.length) * 100,
-              )}
+              {Math.round((currentQuestionIndex / questions.length) * 100)}
             </span>
             %
           </p>
@@ -161,18 +211,42 @@ const Chat = () => {
         {currentQuestion && (
           <div className="pt-md px-lg border-t border-border">
             <div className="flex flex-col gap-sm border-b border-border pb-md">
-              <p className="label-text">suggested</p>
+              <p className="label-text">
+                {isMultiSelectQuestion
+                  ? "suggested • select multiple"
+                  : "suggested"}
+              </p>
 
               <div className="flex gap-xs flex-wrap">
                 {currentQuestion.options.map((option) => (
                   <button
                     key={option.value}
-                    onClick={() => handleAnswer(option.label, option.value)}
+                    type="button"
+                    onClick={() => handleOptionSelect(option)}
                   >
-                    <AnswerLabel label={option.label} />
+                    <AnswerLabel
+                      label={option.label}
+                      className={
+                        isMultiSelectQuestion &&
+                        selectedValues.includes(option.value)
+                          ? "bg-background-tertiary text-white border-background-tertiary"
+                          : ""
+                      }
+                    />
                   </button>
                 ))}
               </div>
+
+              {isMultiSelectQuestion && (
+                <button
+                  type="button"
+                  onClick={submitCurrentAnswer}
+                  disabled={!selectedValues.length && !customInput.trim()}
+                  className="w-fit mt-xs px-md py-xs bg-background-tertiary text-white rounded-full disabled:opacity-40 disabled:cursor-not-allowed"
+                >
+                  Confirm selection
+                </button>
+              )}
             </div>
 
             <div className="flex justify-between gap-xs pt-xs">
@@ -181,14 +255,18 @@ const Chat = () => {
                 value={customInput}
                 onChange={(e) => setCustomInput(e.target.value)}
                 onKeyDown={(e) => {
-                  if (e.key === "Enter") handleCustomSubmit();
+                  if (e.key === "Enter") submitCurrentAnswer();
                 }}
-                placeholder="Or speak in your own words ..."
+                placeholder={
+                  isMultiSelectQuestion
+                    ? "Add an extra preference and press send ..."
+                    : "Or speak in your own words ..."
+                }
                 className="w-full focus:outline-none"
               />
 
               <button
-                onClick={handleCustomSubmit}
+                onClick={submitCurrentAnswer}
                 className="bg-background-tertiary rounded-full p-sm w-fit"
               >
                 <img

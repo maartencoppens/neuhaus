@@ -5,7 +5,10 @@ const usePralineStore = create((set) => ({
   answers: {},
   currentQuestionIndex: 0,
   tasteTags: null,
+  boxPralines: [],
   selectedPraline: null,
+  selectedPralineIndex: null,
+  isReplacePickerOpen: false,
 
   addMessage: (message) =>
     set((state) => ({
@@ -30,9 +33,39 @@ const usePralineStore = create((set) => ({
       tasteTags: tags,
     }),
 
+  setBoxPralines: (pralines) =>
+    set({
+      boxPralines: pralines,
+    }),
+
   setSelectedPraline: (praline) =>
     set({
       selectedPraline: praline,
+    }),
+
+  setSelectedPralineIndex: (index) =>
+    set({
+      selectedPralineIndex: index,
+    }),
+
+  replaceBoxPraline: (index, nextPraline) =>
+    set((state) => {
+      return {
+        boxPralines: state.boxPralines.map((praline, currentIndex) =>
+          currentIndex === index ? nextPraline : praline,
+        ),
+        selectedPraline: nextPraline,
+      };
+    }),
+
+  openReplacePicker: () =>
+    set({
+      isReplacePickerOpen: true,
+    }),
+
+  closeReplacePicker: () =>
+    set({
+      isReplacePickerOpen: false,
     }),
 
   resetChat: () =>
@@ -41,7 +74,10 @@ const usePralineStore = create((set) => ({
       answers: {},
       currentQuestionIndex: 0,
       tasteTags: null,
+      boxPralines: [],
       selectedPraline: null,
+      selectedPralineIndex: null,
+      isReplacePickerOpen: false,
     }),
 }));
 

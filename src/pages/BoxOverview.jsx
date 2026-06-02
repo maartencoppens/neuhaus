@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Card from "../components/Card";
 import Button from "../components/Button";
 import GridItem from "../components/GridItem";
@@ -10,44 +10,40 @@ import "../style/personalMessage.css";
 
 const BoxOverview = () => {
   const tasteTags = usePralineStore((state) => state.tasteTags);
+  const boxPralines = usePralineStore((state) => state.boxPralines);
   const selectedPraline = usePralineStore((state) => state.selectedPraline);
   const setSelectedPraline = usePralineStore(
     (state) => state.setSelectedPraline,
   );
-  const [boxPralines, setBoxPralines] = useState([]);
+  const setBoxPralines = usePralineStore((state) => state.setBoxPralines);
+  const selectedPralineIndex = usePralineStore(
+    (state) => state.selectedPralineIndex,
+  );
+  const setSelectedPralineIndex = usePralineStore(
+    (state) => state.setSelectedPralineIndex,
+  );
+  const isReplacePickerOpen = usePralineStore(
+    (state) => state.isReplacePickerOpen,
+  );
+  const openReplacePicker = usePralineStore((state) => state.openReplacePicker);
+  const closeReplacePicker = usePralineStore(
+    (state) => state.closeReplacePicker,
+  );
   useEffect(() => {
     const matchedPralines = matchPralines(database.pralines, tasteTags, 16);
     setBoxPralines(matchedPralines);
   }, [tasteTags]);
-  console.log(boxPralines);
 
-  useEffect(() => {
-    const brokenImages = [];
+  const replacePraline = (nextPraline) => {
+    if (selectedPralineIndex === null) {
+      return;
+    }
 
-    Promise.all(
-      database.pralines.map((praline) => {
-        return new Promise((resolve) => {
-          const img = new Image();
-
-          img.onload = resolve;
-
-          img.onerror = () => {
-            brokenImages.push({
-              name: praline.name,
-              image: praline.image,
-            });
-
-            resolve();
-          };
-
-          img.src = praline.image;
-        });
-      }),
-    ).then(() => {
-      console.table(brokenImages);
-      console.log(`Found ${brokenImages.length} broken images`);
-    });
-  }, []);
+    usePralineStore
+      .getState()
+      .replaceBoxPraline(selectedPralineIndex, nextPraline);
+    closeReplacePicker();
+  };
 
   return (
     <section className="grid flex-1 grid-cols-5 items-stretch gap-xl py-2xl">
@@ -61,7 +57,14 @@ const BoxOverview = () => {
                   key={praline.id}
                   praline={praline}
                   isSelected={selectedPraline?.id === praline.id}
-                  onSelect={setSelectedPraline}
+                  onSelect={(selectedItem) => {
+                    setSelectedPraline(selectedItem);
+                    setSelectedPralineIndex(
+                      boxPralines.findIndex(
+                        (item) => item.id === selectedItem.id,
+                      ),
+                    );
+                  }}
                 />
               ))}
             </div>
@@ -81,7 +84,7 @@ const BoxOverview = () => {
                   alt={selectedPraline.name}
                   className="h-20 w-20 rounded-xs bg-white object-contain"
                 />
-                <div className="flex flex-col gap-xs">
+                <div className="flex flex-col gap-xs pb-sm">
                   <p className="label-text">praline detail</p>
                   <p className="text-lg font-bold">{selectedPraline.name}</p>
                   <p className="text-sm text-text-light">
@@ -103,14 +106,16 @@ const BoxOverview = () => {
               Select a praline to see its details.
             </div>
           )}
-          <div className="border-t border-border pt-sm">
-            <Button
-              className="w-full uppercase"
-              label="replace praline"
-              link="/Box"
-              variant={"secondary"}
-            />
-          </div>
+          {selectedPraline && (
+            <div className="border-t border-border pt-sm">
+              <Button
+                className="w-full uppercase"
+                label="replace praline"
+                variant="secondary"
+                onClick={openReplacePicker}
+              />
+            </div>
+          )}
         </Card>
 
         <div className="message-card">
@@ -133,6 +138,51 @@ const BoxOverview = () => {
           className="w-full uppercase"
         />
       </div>
+
+      {isReplacePickerOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-lg">
+          <Card className="max-h-[80vh] w-full max-w-4xl overflow-hidden bg-background-primary px-lg py-md">
+            <div className="flex items-center justify-between gap-md border-b border-border pb-sm">
+              <div>
+                <p className="label-text">replace praline</p>
+                <p className="text-sm text-text-light">
+                  Choose a praline to swap in.
+                </p>
+              </div>
+              <Button
+                label="close"
+                variant="secondary"
+                onClick={closeReplacePicker}
+              />
+            </div>
+
+            <div className="mt-md grid max-h-[64vh] grid-cols-2 gap-sm overflow-y-auto pr-xs md:grid-cols-4">
+              {database.pralines.map((praline) => (
+                <button
+                  key={praline.id}
+                  type="button"
+                  onClick={() => replacePraline(praline)}
+                  className={`flex flex-col gap-xs rounded-xs border p-sm text-left hover:bg-background-secondary ${
+                    selectedPraline?.id === praline.id
+                      ? "border-primary bg-background-secondary"
+                      : "border-border"
+                  }`}
+                >
+                  <img
+                    src={praline.image || "/fallback.webp"}
+                    alt={praline.name}
+                    className="h-20 w-full rounded-xs bg-white object-contain"
+                  />
+                  <span className="text-sm font-semibold">{praline.name}</span>
+                  <span className="text-xs text-text-light">
+                    {praline.filling}
+                  </span>
+                </button>
+              ))}
+            </div>
+          </Card>
+        </div>
+      )}
     </section>
   );
 };
