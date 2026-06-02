@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 const GridItem = ({ praline, isSelected, onSelect }) => {
   const fallback = "/fallback.webp";
   const [src, setSrc] = useState(praline.image || fallback);
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     setSrc(praline.image || fallback);
@@ -14,6 +15,8 @@ const GridItem = ({ praline, isSelected, onSelect }) => {
       className={`praline-cell border-0 p-0 appearance-none ${
         isSelected ? "selected" : ""
       }`}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
       onClick={() => onSelect(praline)}
       aria-pressed={isSelected}
     >
@@ -25,6 +28,9 @@ const GridItem = ({ praline, isSelected, onSelect }) => {
         }}
         className="h-full w-full object-cover"
       />
+      <span className={`praline-cell-label ${isHovered ? "visible" : ""}`}>
+        {praline.name}
+      </span>
     </button>
   );
 };

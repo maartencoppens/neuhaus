@@ -22,6 +22,7 @@ const Chat = () => {
   const saveAnswer = usePralineStore((state) => state.saveAnswer);
   const nextQuestion = usePralineStore((state) => state.nextQuestion);
   const setTasteTags = usePralineStore((state) => state.setTasteTags);
+  const setBoxExplanation = usePralineStore((state) => state.setBoxExplanation);
 
   const messagesEndRef = useRef(null);
 
@@ -105,6 +106,7 @@ const Chat = () => {
         }
 
         setTasteTags(tags);
+        setBoxExplanation("");
 
         setTimeout(() => {
           navigate("/box");

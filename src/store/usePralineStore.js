@@ -5,6 +5,7 @@ const usePralineStore = create((set) => ({
   answers: {},
   currentQuestionIndex: 0,
   tasteTags: null,
+  boxExplanation: "",
   boxPralines: [],
   selectedPraline: null,
   selectedPralineIndex: null,
@@ -31,6 +32,11 @@ const usePralineStore = create((set) => ({
   setTasteTags: (tags) =>
     set({
       tasteTags: tags,
+    }),
+
+  setBoxExplanation: (boxExplanation) =>
+    set({
+      boxExplanation,
     }),
 
   setBoxPralines: (pralines) =>
@@ -74,6 +80,7 @@ const usePralineStore = create((set) => ({
       answers: {},
       currentQuestionIndex: 0,
       tasteTags: null,
+      boxExplanation: "",
       boxPralines: [],
       selectedPraline: null,
       selectedPralineIndex: null,

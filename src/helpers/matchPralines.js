@@ -28,7 +28,24 @@ export function matchPralines(pralines, tasteTags, amount = 16) {
     };
   });
 
-  return scoredPralines
-    .sort((a, b) => b.matchScore - a.matchScore)
-    .slice(0, amount);
+  const sortedPralines = scoredPralines
+    .filter((praline) => praline.matchScore > 0)
+    .sort((a, b) => b.matchScore - a.matchScore);
+
+  const matchedPralines = sortedPralines.slice(0, amount);
+
+  if (!matchedPralines.length) {
+    return scoredPralines.slice(0, amount);
+  }
+
+  if (matchedPralines.length >= amount) {
+    return matchedPralines;
+  }
+
+  const fillerPralines = Array.from(
+    { length: amount - matchedPralines.length },
+    (_, index) => matchedPralines[index % matchedPralines.length],
+  );
+
+  return [...matchedPralines, ...fillerPralines];
 }

@@ -4,18 +4,21 @@ import Button from "../components/Button";
 import GridItem from "../components/GridItem";
 import usePralineStore from "../store/usePralineStore";
 import { matchPralines } from "../helpers/matchPralines";
+import { generateBoxExplanation } from "../helpers/openrouter";
 import database from "../data/database.json";
 import "../style/pralineBox.css";
 import "../style/personalMessage.css";
 
 const BoxOverview = () => {
   const tasteTags = usePralineStore((state) => state.tasteTags);
+  const boxExplanation = usePralineStore((state) => state.boxExplanation);
   const boxPralines = usePralineStore((state) => state.boxPralines);
   const selectedPraline = usePralineStore((state) => state.selectedPraline);
   const setSelectedPraline = usePralineStore(
     (state) => state.setSelectedPraline,
   );
   const setBoxPralines = usePralineStore((state) => state.setBoxPralines);
+  const setBoxExplanation = usePralineStore((state) => state.setBoxExplanation);
   const selectedPralineIndex = usePralineStore(
     (state) => state.selectedPralineIndex,
   );
@@ -32,7 +35,40 @@ const BoxOverview = () => {
   useEffect(() => {
     const matchedPralines = matchPralines(database.pralines, tasteTags, 16);
     setBoxPralines(matchedPralines);
-  }, [tasteTags]);
+    setSelectedPraline(null);
+    setSelectedPralineIndex(null);
+  }, [tasteTags, setBoxPralines, setSelectedPraline, setSelectedPralineIndex]);
+
+  useEffect(() => {
+    if (!tasteTags || !boxPralines.length) return;
+
+    let isActive = true;
+
+    const loadBoxExplanation = async () => {
+      try {
+        const explanation = await generateBoxExplanation(
+          tasteTags,
+          boxPralines,
+        );
+
+        if (isActive) {
+          setBoxExplanation(explanation);
+        }
+      } catch {
+        if (isActive) {
+          setBoxExplanation(
+            "These pralines match your taste because they follow the chocolate and flavor preferences you chose, with pairing suggestions that make the box feel complete.",
+          );
+        }
+      }
+    };
+
+    loadBoxExplanation();
+
+    return () => {
+      isActive = false;
+    };
+  }, [tasteTags, boxPralines, setBoxExplanation]);
 
   const replacePraline = (nextPraline) => {
     if (selectedPralineIndex === null) {
@@ -52,18 +88,14 @@ const BoxOverview = () => {
           <div className="praline-box">
             <div className="praline-box-rim" />
             <div className="praline-tray">
-              {boxPralines.map((praline) => (
+              {boxPralines.map((praline, index) => (
                 <GridItem
-                  key={praline.id}
+                  key={`${praline.id}-${index}`}
                   praline={praline}
-                  isSelected={selectedPraline?.id === praline.id}
+                  isSelected={selectedPralineIndex === index}
                   onSelect={(selectedItem) => {
                     setSelectedPraline(selectedItem);
-                    setSelectedPralineIndex(
-                      boxPralines.findIndex(
-                        (item) => item.id === selectedItem.id,
-                      ),
-                    );
+                    setSelectedPralineIndex(index);
                   }}
                 />
               ))}
@@ -71,7 +103,13 @@ const BoxOverview = () => {
           </div>
         </div>
 
-        <Card className="flex flex-1 flex-col gap-sm px-lg"></Card>
+        <Card className="flex flex-1 flex-col gap-sm px-lg">
+          <p className="label-text">why this box fits</p>
+          <p className="text-sm text-text-dark">
+            {boxExplanation ||
+              "We are preparing a short explanation for this box."}
+          </p>
+        </Card>
       </div>
 
       <div className="col-span-2 flex h-full flex-col gap-xl">
@@ -102,8 +140,14 @@ const BoxOverview = () => {
               </div>
             </div>
           ) : (
-            <div className="flex h-full items-center justify-center text-center text-text-light">
-              Select a praline to see its details.
+            <div className="praline-detail-idle">
+              <p className="label-text">explore the box</p>
+              <div className="praline-detail-idle-copy">
+                <span>
+                  <strong>Hover</strong> to see names, <strong>click</strong> a
+                  praline to view its details.
+                </span>
+              </div>
             </div>
           )}
           {selectedPraline && (

@@ -64,6 +64,7 @@
   background-color: #ffffff;
   border-radius: 3px;
   display: flex;
+  position: relative;
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -81,4 +82,62 @@
 
 .praline-cell:hover {
   transform: scale(1.04);
+}
+
+.praline-cell-label {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  padding: 0.35rem 0.4rem;
+  background: rgba(0, 0, 0, 0.72);
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  line-height: 1.1;
+  text-align: center;
+  transform: translateY(100%);
+  transition:
+    transform 0.16s ease,
+    opacity 0.16s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.praline-cell-label.visible,
+.praline-cell:hover .praline-cell-label {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.praline-detail-idle {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.praline-detail-idle-copy {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: 0.35rem;
+  color: #5f5140;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  max-width: 18rem;
+}
+
+.praline-detail-arrow {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 999px;
+  background: rgba(160, 120, 64, 0.14);
+  color: #a07840;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1;
 }
