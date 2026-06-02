@@ -105,7 +105,7 @@ const BoxOverview = () => {
 
         <Card className="flex flex-1 flex-col gap-sm px-lg">
           <p className="label-text">why this box fits</p>
-          <p className="text-sm text-text-dark">
+          <p className="text-md text-text-dark">
             {boxExplanation ||
               "We are preparing a short explanation for this box."}
           </p>

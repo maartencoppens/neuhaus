@@ -9,8 +9,8 @@ const Checkout = () => {
   const deliveryDate = "2-4 werkdagen";
 
   return (
-    <section className="grid flex-1 grid-cols-1 gap-xl py-2xl lg:grid-cols-5 items-start">
-      <div className="lg:col-span-3 flex flex-col gap-xl">
+    <section className="grid flex-1 min-h-0 grid-cols-1 gap-lg py-lg overflow-y-auto lg:grid-cols-5 items-start">
+      <div className="lg:col-span-3 flex flex-col gap-lg">
         <Card className="flex flex-col gap-md px-lg">
           <div className="flex items-center justify-between gap-md border-b border-border pb-sm">
             <div>
@@ -64,7 +64,7 @@ const Checkout = () => {
         </Card>
       </div>
 
-      <div className="lg:col-span-2 flex flex-col gap-xl">
+      <div className="lg:col-span-2 flex flex-col gap-lg lg:sticky lg:top-0 lg:self-start">
         <Card className="flex flex-col gap-md px-lg">
           <div>
             <p className="label-text">checkout details</p>
