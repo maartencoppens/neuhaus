@@ -5,7 +5,7 @@ import Container from "./Container";
 
 const Navbar = () => {
   return (
-    <div className="bg-background-secondary w-full text-text-sm">
+    <div className="w-full text-text-sm">
       <Container>
         <header className="flex justify-between items-center py-md">
           <Logo />

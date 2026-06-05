@@ -9,7 +9,6 @@ import Container from "./components/Container";
 function App() {
   return (
     <div className="h-screen flex flex-col bg-background-primary text-[#2b160e] overflow-hidden">
-      <Navbar />
       <main className="flex-1 flex min-h-0">
         <Container className="flex flex-1 flex-col min-h-0">
           <Routes>
